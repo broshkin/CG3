@@ -1,10 +1,7 @@
-﻿  model.cpp
-  tgaimage.cpp
-  СG3.cpp
+﻿  СG3.cpp
 C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(27,15): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
 C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(51,20): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
 C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(52,20): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
 C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(53,20): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
 C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(54,20): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-  Создание кода...
   СG3.vcxproj -> C:\Users\ROG\Documents\GitHub\CG3\СG3\x64\Debug\СG3.exe
