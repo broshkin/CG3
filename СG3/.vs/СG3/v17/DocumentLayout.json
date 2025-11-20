@@ -7,12 +7,20 @@
       "RelativeMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|solutionrelative:\u0421G3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\to_center.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|solutionrelative:to_center.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\model.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|solutionrelative:model.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\geometry.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|solutionrelative:geometry.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\model.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|solutionrelative:model.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\to_center.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|solutionrelative:to_center.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,11 +30,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "model.cpp",
+              "DocumentMoniker": "C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\model.cpp",
+              "RelativeDocumentMoniker": "model.cpp",
+              "ToolTip": "C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\model.cpp",
+              "RelativeToolTip": "model.cpp",
+              "ViewState": "AgIAACoAAAAAAAAAAAAuwDwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-20T02:18:30.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "model.h",
+              "DocumentMoniker": "C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\model.h",
+              "RelativeDocumentMoniker": "model.h",
+              "ToolTip": "C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\model.h",
+              "RelativeToolTip": "model.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-20T02:18:20.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "to_center.cpp",
               "DocumentMoniker": "C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\to_center.cpp",
               "RelativeDocumentMoniker": "to_center.cpp",
@@ -34,8 +68,7 @@
               "RelativeToolTip": "to_center.cpp",
               "ViewState": "AgIAACoAAAAAAAAAAAAIwEgAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-11T19:40:35.833Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-11T19:40:35.833Z"
             },
             {
               "$type": "Document",
@@ -45,9 +78,10 @@
               "RelativeDocumentMoniker": "geometry.h",
               "ToolTip": "C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\geometry.h",
               "RelativeToolTip": "geometry.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAEcAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-11T19:36:00.076Z"
+              "WhenOpened": "2025-11-11T19:36:00.076Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -57,7 +91,7 @@
               "RelativeDocumentMoniker": "\u0421G3.cpp",
               "ToolTip": "C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\\u0421G3.cpp",
               "RelativeToolTip": "\u0421G3.cpp",
-              "ViewState": "AgIAACAAAAAAAAAAAAAIwCkAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-11T19:34:33.985Z",
               "EditorCaption": ""

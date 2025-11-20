@@ -1,54 +1,61 @@
 #include <iostream>
-#include <string>
 #include <fstream>
 #include <sstream>
 #include <vector>
 #include "model.h"
 
-Model::Model(const char *filename) : verts_(), faces_() {
-    std::ifstream in;
-    in.open (filename, std::ifstream::in);
-    if (in.fail()) return;
+Model::Model(const char* filename) {
+    std::ifstream file;
+    file.open(filename);
+
+    if (!file.is_open()) {
+        std::cerr << "Cannot open file: " << filename << std::endl;
+        return;
+    }
+
     std::string line;
-    while (!in.eof()) {
-        std::getline(in, line);
-        std::istringstream iss(line.c_str());
-        char trash;
-        if (!line.compare(0, 2, "v ")) {
-            iss >> trash;
+    while (std::getline(file, line)) {
+        if (line.substr(0, 2) == "v ") {
+            std::istringstream s(line.substr(2));
             Vec3f v;
-            for (int i=0;i<3;i++) iss >> v.raw[i];
-            verts_.push_back(v);
-        } else if (!line.compare(0, 2, "f ")) {
-            std::vector<int> f;
-            int itrash, idx;
-            iss >> trash;
-            while (iss >> idx >> trash >> itrash >> trash >> itrash) {
-                idx--; // in wavefront obj all indices start at 1, not zero
-                f.push_back(idx);
+            s >> v.x >> v.y >> v.z;
+            vertices.push_back(v);
+        }
+        else if (line.substr(0, 2) == "f ") {
+            std::istringstream s(line.substr(2));
+            std::vector<int> face;
+            std::string vertex;
+            while (s >> vertex) {
+                // OBJ format: "f v1/vt1/vn1 v2/vt2/vn2 ..."
+                // We only need the vertex index (first number)
+                std::stringstream vstream(vertex);
+                std::string index;
+                std::getline(vstream, index, '/'); // get only vertex index
+                face.push_back(std::stoi(index) - 1);
             }
-            faces_.push_back(f);
+            faces.push_back(face);
         }
     }
-    std::cerr << "# v# " << verts_.size() << " f# "  << faces_.size() << std::endl;
+
+    file.close();
+    std::cout << "Loaded " << vertices.size() << " vertices, " << faces.size() << " faces" << std::endl;
 }
 
 Model::~Model() {
 }
 
-int Model::nverts() {
-    return (int)verts_.size();
+int Model::getVertexCount() {
+    return vertices.size();
 }
 
-int Model::nfaces() {
-    return (int)faces_.size();
+int Model::getFaceCount() {
+    return faces.size();
 }
 
-std::vector<int> Model::face(int idx) {
-    return faces_[idx];
+Vec3f Model::getVertex(int i) {
+    return vertices[i];
 }
 
-Vec3f Model::vert(int i) {
-    return verts_[i];
+std::vector<int> Model::getFace(int idx) {
+    return faces[idx];
 }
-
