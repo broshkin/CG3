@@ -1,35 +1,35 @@
 ﻿#include "tgaimage.h"
 #include "model.h"
 #include "geometry.h"
+#include "ishader.h"
 #include <limits>
 #include <algorithm>
+#include <cmath>
 
 const int WIDTH = 800;
 const int HEIGHT = 800;
-const TGAColor WHITE = TGAColor(255, 255, 255, 255);
 
 Matrix viewport(int x, int y, int w, int h) {
-    Matrix m = Matrix::identity(4);
-    m[0][0] = w / 2.0f;
-    m[1][1] = h / 2.0f;
-    m[2][2] = 1.0f;
-    m[0][3] = x + w / 2.0f;
-    m[1][3] = y + h / 2.0f;
+    Matrix m = Matrix::identity();
+    m[0][0] = w / 2.f;
+    m[1][1] = h / 2.f;
+    m[2][2] = 1.f;
+    m[0][3] = x + w / 2.f;
+    m[1][3] = y + h / 2.f;
     return m;
 }
 
-Matrix projection(float coeff = 1.0f) {
-    Matrix m = Matrix::identity(4);
+Matrix projection(float coeff = 0.f) {
+    Matrix m = Matrix::identity();
     m[3][2] = coeff;
     return m;
 }
 
 Matrix lookat(Vec3f eye, Vec3f center, Vec3f up) {
     Vec3f z = (eye - center).normalize();
-    Vec3f x = up.cross(z).normalize();
-    Vec3f y = z.cross(x).normalize();
-
-    Matrix res = Matrix::identity(4);
+    Vec3f x = cross(up, z).normalize();
+    Vec3f y = cross(z, x).normalize();
+    Matrix res = Matrix::identity();
     for (int i = 0; i < 3; i++) {
         res[0][i] = x[i];
         res[1][i] = y[i];
@@ -39,143 +39,193 @@ Matrix lookat(Vec3f eye, Vec3f center, Vec3f up) {
     return res;
 }
 
-// Улучшенная функция барицентрических координат с проверкой точности
-Vec3f barycentric(Vec3f A, Vec3f B, Vec3f C, Vec3f P) {
-    Vec3f v0 = B - A, v1 = C - A, v2 = P - A;
-    float d00 = v0.dot(v0);
-    float d01 = v0.dot(v1);
-    float d11 = v1.dot(v1);
-    float d20 = v2.dot(v0);
-    float d21 = v2.dot(v1);
-    float denom = d00 * d11 - d01 * d01;
-
-    // Защита от деления на ноль
-    if (std::abs(denom) < 1e-10f) {
-        return Vec3f(-1, -1, -1);
+Vec3f barycentric(Vec2f A, Vec2f B, Vec2f C, Vec2f P) {
+    Vec3f s[2];
+    for (int i = 2; i--; ) {
+        s[i][0] = C[i] - A[i];
+        s[i][1] = B[i] - A[i];
+        s[i][2] = A[i] - P[i];
     }
-
-    float v = (d11 * d20 - d01 * d21) / denom;
-    float w = (d00 * d21 - d01 * d20) / denom;
-    float u = 1.0f - v - w;
-
-    return Vec3f(u, v, w);
+    Vec3f u = cross(s[0], s[1]);
+    if (std::abs(u[2]) > 1e-2)
+        return Vec3f(1.f - (u.x + u.y) / u.z, u.y / u.z, u.x / u.z);
+    return Vec3f(-1, 1, 1);
 }
 
-// Улучшенный растеризатор с перспективной коррекцией
-void drawTriangle(Vec4f* pts, float* zbuffer, TGAImage& image, TGAColor color) {
-    // Находим bounding box с небольшим запасом
-    Vec2f bboxmin(std::numeric_limits<float>::max(), std::numeric_limits<float>::max());
-    Vec2f bboxmax(-std::numeric_limits<float>::max(), -std::numeric_limits<float>::max());
+void triangle(mat<4, 3, float>& clipc, IShader& shader, TGAImage& image, float* zbuffer) {
+    Matrix viewport_mat = viewport(0, 0, image.get_width(), image.get_height());
+    mat<3, 4, float> pts;
 
     for (int i = 0; i < 3; i++) {
-        // Делим на w для получения экранных координат
-        Vec3f screen = Vec3f(pts[i].x / pts[i].w, pts[i].y / pts[i].w, pts[i].z / pts[i].w);
-        bboxmin.x = std::max(0.0f, std::min(bboxmin.x, screen.x));
-        bboxmin.y = std::max(0.0f, std::min(bboxmin.y, screen.y));
-        bboxmax.x = std::min((float)image.get_width() - 1, std::max(bboxmax.x, screen.x));
-        bboxmax.y = std::min((float)image.get_height() - 1, std::max(bboxmax.y, screen.y));
+        Vec4f vertex;
+        for (int j = 0; j < 4; j++) {
+            vertex[j] = clipc[j][i];
+        }
+        Vec4f transformed = viewport_mat * vertex;
+        pts[i] = transformed;
     }
 
-    // Добавляем небольшой запас для избежания артефактов на границах
-    bboxmin.x = std::floor(bboxmin.x);
-    bboxmin.y = std::floor(bboxmin.y);
-    bboxmax.x = std::ceil(bboxmax.x);
-    bboxmax.y = std::ceil(bboxmax.y);
+    mat<3, 2, float> pts2;
+    for (int i = 0; i < 3; i++) {
+        Vec4f v = pts[i];
+        pts2[i] = Vec2f(v[0] / v[3], v[1] / v[3]);
+    }
 
-    // Проходим по всем пикселям в bounding box
-    for (int x = (int)bboxmin.x; x <= (int)bboxmax.x; x++) {
-        for (int y = (int)bboxmin.y; y <= (int)bboxmax.y; y++) {
-            // Используем центр пикселя для более точного определения
-            Vec3f P(x + 0.5f, y + 0.5f, 0);
+    Vec2f bboxmin(std::numeric_limits<float>::max(), std::numeric_limits<float>::max());
+    Vec2f bboxmax(-std::numeric_limits<float>::max(), -std::numeric_limits<float>::max());
+    Vec2f clamp(image.get_width() - 1, image.get_height() - 1);
 
-            // Преобразуем вершины в экранные координаты для барицентрического расчета
-            Vec3f A = Vec3f(pts[0].x / pts[0].w, pts[0].y / pts[0].w, pts[0].z / pts[0].w);
-            Vec3f B = Vec3f(pts[1].x / pts[1].w, pts[1].y / pts[1].w, pts[1].z / pts[1].w);
-            Vec3f C = Vec3f(pts[2].x / pts[2].w, pts[2].y / pts[2].w, pts[2].z / pts[2].w);
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 2; j++) {
+            bboxmin[j] = std::max(0.f, std::min(bboxmin[j], pts2[i][j]));
+            bboxmax[j] = std::min(clamp[j], std::max(bboxmax[j], pts2[i][j]));
+        }
+    }
 
-            Vec3f bc = barycentric(A, B, C, P);
+    Vec2i P;
+    TGAColor color;
+    for (P.x = bboxmin.x; P.x <= bboxmax.x; P.x++) {
+        for (P.y = bboxmin.y; P.y <= bboxmax.y; P.y++) {
+            Vec3f bc_screen = barycentric(pts2[0], pts2[1], pts2[2], Vec2f(P.x, P.y));
+            if (bc_screen.x < 0 || bc_screen.y < 0 || bc_screen.z < 0) continue;
 
-            // Используем небольшой эпсилон для учета ошибок округления
-            if (bc.x < -0.001f || bc.y < -0.001f || bc.z < -0.001f) continue;
+            float frag_depth = 0;
+            for (int k = 0; k < 3; k++) {
+                frag_depth += bc_screen[k] * clipc[2][k];
+            }
 
-            // Перспективно-корректная интерполяция Z
-            float z = 0;
-            float w = 0;
-
-            // Интерполируем 1/w для перспективной коррекции
-            float interpolated_w = 1.0f / (bc.x / pts[0].w + bc.y / pts[1].w + bc.z / pts[2].w);
-
-            // Интерполируем Z с перспективной коррекцией
-            z = (bc.x * pts[0].z / pts[0].w + bc.y * pts[1].z / pts[1].w + bc.z * pts[2].z / pts[2].w) * interpolated_w;
-
-            int idx = x + y * WIDTH;
+            int idx = P.x + P.y * image.get_width();
             if (idx < 0 || idx >= WIDTH * HEIGHT) continue;
 
-            // Z-буферизация
-            if (zbuffer[idx] < z) {
-                zbuffer[idx] = z;
-                image.set(x, y, color);
+            if (zbuffer[idx] < frag_depth) {
+                zbuffer[idx] = frag_depth;
+                bool discard = shader.fragment(bc_screen, color);
+                if (!discard) {
+                    image.set(P.x, P.y, color);
+                }
             }
         }
     }
 }
 
+// Шейдер с вычисляемыми нормалями (плоское освещение)
+struct PhongShader : public IShader {
+    Model* model;
+    Matrix ModelView;
+    Matrix Projection;
+    Vec3f light_dir;
+
+    // Для хранения нормалей вершин (одинаковая для всех вершин грани)
+    Vec3f face_normal;
+
+    virtual Vec4f vertex(int iface, int nthvert) {
+        // Проверяем границы
+        if (iface < 0 || iface >= model->nfaces()) {
+            return Vec4f(0, 0, 0, 1);
+        }
+        if (nthvert < 0 || nthvert >= 3) {
+            return Vec4f(0, 0, 0, 1);
+        }
+
+        // Вычисляем нормаль грани по трем вершинам
+        if (nthvert == 0) {
+            Vec3f v0 = model->vert(iface, 0);
+            Vec3f v1 = model->vert(iface, 1);
+            Vec3f v2 = model->vert(iface, 2);
+
+            Vec3f edge1 = v1 - v0;
+            Vec3f edge2 = v2 - v0;
+            face_normal = cross(edge1, edge2).normalize();
+        }
+
+        // Получаем вершину
+        Vec3f vertex = model->vert(iface, nthvert);
+
+        // Применяем матричные преобразования
+        Vec4f gl_Vertex = Projection * ModelView * embed<4>(vertex, 1.0f);
+
+        return gl_Vertex;
+    }
+
+    virtual bool fragment(Vec3f bar, TGAColor& color) {
+        // Используем нормаль грани (плоское освещение)
+        Vec3f n = face_normal;
+
+        // Преобразуем нормаль в пространство камеры
+        Vec4f normal_camera = ModelView * embed<4>(n, 0.0f);
+        Vec3f n_cam = Vec3f(normal_camera[0], normal_camera[1], normal_camera[2]).normalize();
+
+        // Преобразуем направление света в пространство камеры
+        Vec4f light_camera = ModelView * embed<4>(light_dir, 0.0f);
+        Vec3f l_cam = Vec3f(light_camera[0], light_camera[1], light_camera[2]).normalize();
+
+        // Освещение по Ламберту
+        float intensity = std::max(0.0f, n_cam * l_cam);
+
+        // Добавляем немного ambient освещения
+        intensity = 0.2f + 0.8f * intensity;
+
+        int col = static_cast<int>(255 * intensity);
+
+        // Ограничиваем диапазон цвета
+        col = std::max(0, std::min(255, col));
+        color = TGAColor(col, col, col, 255);
+
+        return false;
+    }
+};
+
 int main(int argc, char** argv) {
-    const char* modelFile = (argc == 2) ? argv[1] : "obj/african_head.obj";
-    Model model(modelFile);
+    Model* model = new Model("obj/new_peter_griffin.obj");
+    if (model->nfaces() == 0) {
+        std::cerr << "ERROR: Model not loaded!" << std::endl;
+        return -1;
+    }
+    std::cout << "Model loaded: " << model->nfaces() << " faces" << std::endl;
 
     TGAImage image(WIDTH, HEIGHT, TGAImage::RGB);
 
-    // Инициализация z-буфера
     float* zbuffer = new float[WIDTH * HEIGHT];
     for (int i = 0; i < WIDTH * HEIGHT; i++) {
         zbuffer[i] = -std::numeric_limits<float>::max();
     }
 
     // Настройка камеры
-    Vec3f eye(0, 0, 3);
+    Vec3f eye(1, 1, 3);
     Vec3f center(0, 0, 0);
     Vec3f up(0, 1, 0);
 
-    // Матрицы преобразований
+    // Матрицы
     Matrix ModelView = lookat(eye, center, up);
-    Matrix Projection = projection(-1.0f / (eye - center).length());
-    Matrix Viewport = viewport(0, 0, WIDTH, HEIGHT);
+    Matrix Projection = projection(-1.f / (eye - center).norm());
 
-    // Общая матрица преобразований
-    Matrix MVP = Viewport * Projection * ModelView;
+    // Направление света
+    Vec3f light_dir = (Vec3f(1, 1, 1)).normalize();
 
-    Vec3f light_dir(0, 0, -1);
+    // Шейдер
+    PhongShader shader;
+    shader.model = model;
+    shader.ModelView = ModelView;
+    shader.Projection = Projection;
+    shader.light_dir = light_dir;
 
-    for (int i = 0; i < model.getFaceCount(); i++) {
-        std::vector<int> face = model.getFace(i);
-        Vec4f clip_coords[3];
-        Vec3f world_coords[3];
-
+    // РЕНДЕРИМ ВСЕ ГРАНИ
+    std::cout << "Rendering all faces with computed normals..." << std::endl;
+    for (int i = 0; i < model->nfaces(); i++) {
+        if (i % 500 == 0) std::cout << "Rendering face " << i << std::endl;
+        mat<4, 3, float> screen_coords;
         for (int j = 0; j < 3; j++) {
-            Vec3f v = model.getVertex(face[j]);
-            world_coords[j] = v;
-
-            // Преобразуем вершину через все матрицы
-            Matrix m = MVP * v2m(v);
-            clip_coords[j] = m2v4(m);
+            screen_coords.set_col(j, shader.vertex(i, j));
         }
-
-        // Вычисляем нормаль для затенения
-        Vec3f n = (world_coords[2] - world_coords[0]).cross(world_coords[1] - world_coords[0]);
-        n.normalize();
-
-        float intensity = n.dot(light_dir);
-
-        if (intensity > 0) {
-            TGAColor color = TGAColor(255 * intensity, 255 * intensity, 255 * intensity, 255);
-            drawTriangle(clip_coords, zbuffer, image, color);
-        }
+        triangle(screen_coords, shader, image, zbuffer);
     }
 
     image.flip_vertically();
     image.write_tga_file("output.tga");
 
+    std::cout << "Rendering completed!" << std::endl;
+
+    delete model;
     delete[] zbuffer;
     return 0;
 }

@@ -1,6 +1,7 @@
 #ifndef __ISHADER_H__
 #define __ISHADER_H__
 
+#include "tgaimage.h"
 #include "geometry.h"
 
 class IShader {

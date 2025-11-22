@@ -6,17 +6,23 @@
 
 class Model {
 private:
-    std::vector<Vec3f> vertices;
-    std::vector<std::vector<int>> faces;
+    std::vector<Vec3f> verts_;
+    std::vector<Vec3f> norms_;
+    std::vector<Vec2f> uv_;
+    std::vector<std::vector<int> > faces_;
+    std::vector<std::vector<int> > faces_norms_;
+    std::vector<std::vector<int> > faces_uv_;
 
 public:
     Model(const char* filename);
     ~Model();
-
-    int getVertexCount();
-    int getFaceCount();
-    Vec3f getVertex(int i);
-    std::vector<int> getFace(int idx);
+    int nverts();
+    int nfaces();
+    Vec3f vert(int i);
+    Vec3f vert(int iface, int nthvert);
+    Vec3f normal(int iface, int nthvert);
+    Vec2f uv(int iface, int nthvert);
+    std::vector<int> face(int idx);
 };
 
 #endif
