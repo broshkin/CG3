@@ -8,6 +8,38 @@ const int WIDTH = 800;
 const int HEIGHT = 800;
 const TGAColor WHITE = TGAColor(255, 255, 255, 255);
 
+Matrix viewport(int x, int y, int w, int h) {
+    Matrix m = Matrix::identity(4);
+    m[0][3] = x + w / 2.f;
+    m[1][3] = y + h / 2.f;
+    m[2][3] = 255.f / 2.f;
+
+    m[0][0] = w / 2.f;
+    m[1][1] = h / 2.f;
+    m[2][2] = 255.f / 2.f;
+    return m;
+}
+
+Matrix projection(float coeff = 0.f) {
+    Matrix m = Matrix::identity(4);
+    m[3][2] = coeff;
+    return m;
+}
+
+Matrix lookat(Vec3f eye, Vec3f center, Vec3f up) {
+    Vec3f z = (eye - center).normalize();
+    Vec3f x = (up.cross(z)).normalize();
+    Vec3f y = (z.cross(x)).normalize();
+    Matrix res = Matrix::identity(4);
+    for (int i = 0; i < 3; i++) {
+        res[0][i] = x[i];
+        res[1][i] = y[i];
+        res[2][i] = z[i];
+        res[i][3] = -center[i];
+    }
+    return res;
+}
+
 void drawTriangle(Vec2i t0, Vec2i t1, Vec2i t2, float z0, float z1, float z2,
     float* zbuffer, TGAImage& image, TGAColor color) {
     if (t0.y == t1.y && t0.y == t2.y) return;
@@ -56,7 +88,7 @@ void drawTriangle(Vec2i t0, Vec2i t1, Vec2i t2, float z0, float z1, float z2,
 }
 
 int main(int argc, char** argv) {
-    const char* modelFile = (argc == 2) ? argv[1] : "obj/african_head.obj";
+    const char* modelFile = (argc == 2) ? argv[1] : "obj/new_peter_griffin.obj";
     Model model(modelFile);
 
     TGAImage image(WIDTH, HEIGHT, TGAImage::RGB);
@@ -67,31 +99,45 @@ int main(int argc, char** argv) {
         zbuffer[i] = -std::numeric_limits<float>::max();
     }
 
-    Vec3f lightDir(0, 0, -1);
+    // Настройка камеры
+    Vec3f eye(1, 1, 3);
+    Vec3f center(0, 0, 0);
+    Vec3f up(0, 1, 0);
+
+    // Матрицы преобразований
+    Matrix ModelView = lookat(eye, center, up);
+    Matrix Viewport = viewport(WIDTH / 8, HEIGHT / 8, WIDTH * 3 / 4, HEIGHT * 3 / 4);
+    Matrix Projection = projection(-1.f / (eye - center).length());
+
+    Vec3f light_dir(0, 0, -1);
 
     for (int i = 0; i < model.getFaceCount(); i++) {
         std::vector<int> face = model.getFace(i);
-        Vec2i screenCoords[3];
-        Vec3f worldCoords[3];
-        float zValues[3];
+        Vec2i screen_coords[3];
+        Vec3f world_coords[3];
+        float z_values[3];
 
         for (int j = 0; j < 3; j++) {
-            Vec3f vertex = model.getVertex(face[j]);
-            screenCoords[j] = Vec2i((vertex.x + 1.0f) * WIDTH / 2.0f,
-                (vertex.y + 1.0f) * HEIGHT / 2.0f);
-            worldCoords[j] = vertex;
-            zValues[j] = vertex.z;
+            Vec3f v = model.getVertex(face[j]);
+
+            // Преобразование координат через матрицы
+            Matrix m = Viewport * Projection * ModelView * v2m(v);
+            Vec3f transformed = m2v(m);
+
+            screen_coords[j] = Vec2i(transformed.x, transformed.y);
+            world_coords[j] = v;
+            z_values[j] = transformed.z;
         }
 
-        Vec3f normal = (worldCoords[2] - worldCoords[0]).cross(worldCoords[1] - worldCoords[0]);
-        normal.normalize();
+        Vec3f n = (world_coords[2] - world_coords[0]).cross(world_coords[1] - world_coords[0]);
+        n.normalize();
 
-        float intensity = normal.dot(lightDir);
+        float intensity = n.dot(light_dir);
 
         if (intensity > 0) {
             TGAColor color = TGAColor(255 * intensity, 255 * intensity, 255 * intensity, 255);
-            drawTriangle(screenCoords[0], screenCoords[1], screenCoords[2],
-                zValues[0], zValues[1], zValues[2],
+            drawTriangle(screen_coords[0], screen_coords[1], screen_coords[2],
+                z_values[0], z_values[1], z_values[2],
                 zbuffer, image, color);
         }
     }
