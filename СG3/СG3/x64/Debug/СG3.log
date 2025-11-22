@@ -1,51 +1,42 @@
 ﻿  model.cpp
 C:\Users\ROG\Documents\GitHub\CG3\СG3\model.cpp(48,25): warning C4267: return: преобразование из "size_t" в "int"; возможна потеря данных
 C:\Users\ROG\Documents\GitHub\CG3\СG3\model.cpp(52,22): warning C4267: return: преобразование из "size_t" в "int"; возможна потеря данных
-  tgaimage.cpp
-  to_center.cpp
   СG3.cpp
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(49,98): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(49,98): warning C4244:         with
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(49,98): warning C4244:         [
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(49,98): warning C4244:             T=float
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(49,98): warning C4244:         ]
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(49,98): warning C4244:         and
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(49,98): warning C4244:         [
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(49,98): warning C4244:             T=int
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(49,98): warning C4244:         ]
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(49,63): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(49,63): warning C4244:         with
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(49,63): warning C4244:         [
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(49,63): warning C4244:             T=float
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(49,63): warning C4244:         ]
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(49,63): warning C4244:         and
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(49,63): warning C4244:         [
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(49,63): warning C4244:             T=int
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(49,63): warning C4244:         ]
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(59,77): warning C4244: аргумент: преобразование "float" в "unsigned char", возможна потеря данных
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(59,60): warning C4244: аргумент: преобразование "float" в "unsigned char", возможна потеря данных
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(59,43): warning C4244: аргумент: преобразование "float" в "unsigned char", возможна потеря данных
-C:\Users\ROG\Documents\GitHub\CG3\СG3\geometry.h(21,33): warning C4244: аргумент: преобразование "float" в "T", возможна потеря данных
-C:\Users\ROG\Documents\GitHub\CG3\СG3\geometry.h(21,33): warning C4244:         with
-C:\Users\ROG\Documents\GitHub\CG3\СG3\geometry.h(21,33): warning C4244:         [
-C:\Users\ROG\Documents\GitHub\CG3\СG3\geometry.h(21,33): warning C4244:             T=int
-C:\Users\ROG\Documents\GitHub\CG3\СG3\geometry.h(21,33): warning C4244:         ]
-  (компиляция исходного файла "СG3.cpp")
-      C:\Users\ROG\Documents\GitHub\CG3\СG3\geometry.h(21,33):
-      контекст создания экземпляра шаблона (сначала самый старый)
-          C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(9,6):
-          выполняется компиляция ссылки на экземпляр класс шаблон функции "Vec2<int>"
-          C:\Users\ROG\Documents\GitHub\CG3\СG3\geometry.h(20,13):
-          во время компиляции функции-члена класс шаблон "Vec2<int> Vec2<int>::operator *(float) const"
-              C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(23,22):
-              см. первую ссылку на "Vec2<int>::operator *" в "drawTriangle"
-  
-C:\Users\ROG\Documents\GitHub\CG3\СG3\geometry.h(21,26): warning C4244: аргумент: преобразование "float" в "T", возможна потеря данных
-C:\Users\ROG\Documents\GitHub\CG3\СG3\geometry.h(21,26): warning C4244:         with
-C:\Users\ROG\Documents\GitHub\CG3\СG3\geometry.h(21,26): warning C4244:         [
-C:\Users\ROG\Documents\GitHub\CG3\СG3\geometry.h(21,26): warning C4244:             T=int
-C:\Users\ROG\Documents\GitHub\CG3\СG3\geometry.h(21,26): warning C4244:         ]
-  (компиляция исходного файла "СG3.cpp")
-  
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(30,30): warning C4244: аргумент: преобразование "float" в "T", возможна потеря данных
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(30,30): warning C4244:         with
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(30,30): warning C4244:         [
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(30,30): warning C4244:             T=int
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(30,30): warning C4244:         ]
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(32,24): warning C4244: аргумент: преобразование "float" в "T", возможна потеря данных
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(32,24): warning C4244:         with
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(32,24): warning C4244:         [
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(32,24): warning C4244:             T=int
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(32,24): warning C4244:         ]
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(33,24): warning C4244: аргумент: преобразование "float" в "T", возможна потеря данных
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(33,24): warning C4244:         with
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(33,24): warning C4244:         [
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(33,24): warning C4244:             T=int
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(33,24): warning C4244:         ]
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(81,44): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(81,44): warning C4244:         with
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(81,44): warning C4244:         [
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(81,44): warning C4244:             T=float
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(81,44): warning C4244:         ]
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(81,44): warning C4244:         and
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(81,44): warning C4244:         [
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(81,44): warning C4244:             T=int
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(81,44): warning C4244:         ]
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(80,63): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(80,63): warning C4244:         with
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(80,63): warning C4244:         [
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(80,63): warning C4244:             T=float
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(80,63): warning C4244:         ]
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(80,63): warning C4244:         and
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(80,63): warning C4244:         [
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(80,63): warning C4244:             T=int
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(80,63): warning C4244:         ]
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(92,77): warning C4244: аргумент: преобразование "float" в "unsigned char", возможна потеря данных
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(92,60): warning C4244: аргумент: преобразование "float" в "unsigned char", возможна потеря данных
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(92,43): warning C4244: аргумент: преобразование "float" в "unsigned char", возможна потеря данных
   Создание кода...
   СG3.vcxproj -> C:\Users\ROG\Documents\GitHub\CG3\СG3\x64\Debug\СG3.exe
