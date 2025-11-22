@@ -9,8 +9,8 @@
 //
 //int main() {
 //    // Открываем файлы
-//    std::ifstream input("obj/peter_griffin.obj");
-//    std::ofstream output("obj/new_peter_griffin.obj");
+//    std::ifstream input("obj/123.obj");
+//    std::ofstream output("obj/1234.obj");
 //
 //    if (!input.is_open() || !output.is_open()) {
 //        return -1; // Ошибка открытия файлов

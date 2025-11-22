@@ -129,9 +129,13 @@
     <ClCompile Include="СG3.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="geometry.h" />
+    <ClInclude Include="ImprovedShader.h" />
     <ClInclude Include="ishader.h" />
     <ClInclude Include="model.h" />
+    <ClInclude Include="SimpleShader.h" />
+    <ClInclude Include="SmoothShader.h" />
     <ClInclude Include="tgaimage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

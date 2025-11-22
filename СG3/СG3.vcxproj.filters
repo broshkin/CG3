@@ -41,5 +41,17 @@
     <ClInclude Include="ishader.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="ImprovedShader.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="SmoothShader.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleShader.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,52 +1,48 @@
-﻿  model.cpp
-  tgaimage.cpp
-  to_center.cpp
-  СG3.cpp
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(76,59): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(76,59): warning C4244:         with
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(76,59): warning C4244:         [
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(76,59): warning C4244:             T=float
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(76,59): warning C4244:         ]
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(76,35): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(76,35): warning C4244:         with
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(76,35): warning C4244:         [
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(76,35): warning C4244:             T=float
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(76,35): warning C4244:         ]
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(87,23): warning C4244: =: преобразование "T" в "T", возможна потеря данных
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(87,23): warning C4244:         with
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(87,23): warning C4244:         [
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(87,23): warning C4244:             T=float
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(87,23): warning C4244:         ]
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(87,23): warning C4244:         and
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(87,23): warning C4244:         [
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(87,23): warning C4244:             T=int
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(87,23): warning C4244:         ]
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(88,27): warning C4244: =: преобразование "T" в "T", возможна потеря данных
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(88,27): warning C4244:         with
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(88,27): warning C4244:         [
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(88,27): warning C4244:             T=float
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(88,27): warning C4244:         ]
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(88,27): warning C4244:         and
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(88,27): warning C4244:         [
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(88,27): warning C4244:             T=int
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(88,27): warning C4244:         ]
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(89,82): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(89,82): warning C4244:         with
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(89,82): warning C4244:         [
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(89,82): warning C4244:             T=int
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(89,82): warning C4244:         ]
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(89,82): warning C4244:         and
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(89,82): warning C4244:         [
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(89,82): warning C4244:             T=float
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(89,82): warning C4244:         ]
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(89,77): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(89,77): warning C4244:         with
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(89,77): warning C4244:         [
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(89,77): warning C4244:             T=int
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(89,77): warning C4244:         ]
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(89,77): warning C4244:         and
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(89,77): warning C4244:         [
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(89,77): warning C4244:             T=float
-C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(89,77): warning C4244:         ]
-  Создание кода...
+﻿  СG3.cpp
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(60,59): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(60,59): warning C4244:         with
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(60,59): warning C4244:         [
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(60,59): warning C4244:             T=float
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(60,59): warning C4244:         ]
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(60,35): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(60,35): warning C4244:         with
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(60,35): warning C4244:         [
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(60,35): warning C4244:             T=float
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(60,35): warning C4244:         ]
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(71,23): warning C4244: =: преобразование "T" в "T", возможна потеря данных
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(71,23): warning C4244:         with
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(71,23): warning C4244:         [
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(71,23): warning C4244:             T=float
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(71,23): warning C4244:         ]
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(71,23): warning C4244:         and
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(71,23): warning C4244:         [
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(71,23): warning C4244:             T=int
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(71,23): warning C4244:         ]
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(72,27): warning C4244: =: преобразование "T" в "T", возможна потеря данных
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(72,27): warning C4244:         with
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(72,27): warning C4244:         [
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(72,27): warning C4244:             T=float
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(72,27): warning C4244:         ]
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(72,27): warning C4244:         and
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(72,27): warning C4244:         [
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(72,27): warning C4244:             T=int
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(72,27): warning C4244:         ]
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(73,82): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(73,82): warning C4244:         with
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(73,82): warning C4244:         [
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(73,82): warning C4244:             T=int
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(73,82): warning C4244:         ]
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(73,82): warning C4244:         and
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(73,82): warning C4244:         [
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(73,82): warning C4244:             T=float
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(73,82): warning C4244:         ]
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(73,77): warning C4244: аргумент: преобразование "T" в "T", возможна потеря данных
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(73,77): warning C4244:         with
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(73,77): warning C4244:         [
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(73,77): warning C4244:             T=int
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(73,77): warning C4244:         ]
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(73,77): warning C4244:         and
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(73,77): warning C4244:         [
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(73,77): warning C4244:             T=float
+C:\Users\ROG\Documents\GitHub\CG3\СG3\СG3.cpp(73,77): warning C4244:         ]
   СG3.vcxproj -> C:\Users\ROG\Documents\GitHub\CG3\СG3\x64\Debug\СG3.exe

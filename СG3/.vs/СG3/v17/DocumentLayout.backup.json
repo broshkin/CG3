@@ -7,24 +7,39 @@
       "RelativeMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|solutionrelative:\u0421G3.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\model.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|solutionrelative:model.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|solutionrelative:Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\to_center.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|solutionrelative:to_center.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\geometry.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|solutionrelative:geometry.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\model.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|solutionrelative:model.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\model.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|solutionrelative:model.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\ImprovedShader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|solutionrelative:ImprovedShader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\ishader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|solutionrelative:ishader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\geometry.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|solutionrelative:geometry.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\SimpleShader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3910C947-27BC-4E60-B712-DA065937E2E1}|\u0421G3.vcxproj|solutionrelative:SimpleShader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector||{3B902123-F8A7-4915-9F01-361F908088D0}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,43 +49,94 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "vector",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
+              "ViewState": "AgIAAHgHAAAAAAAAAAApwIkHAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-22T08:25:22.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SimpleShader.h",
+              "DocumentMoniker": "C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\SimpleShader.h",
+              "RelativeDocumentMoniker": "SimpleShader.h",
+              "ToolTip": "C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\SimpleShader.h",
+              "RelativeToolTip": "SimpleShader.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-22T08:20:06.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "ImprovedShader.h",
+              "DocumentMoniker": "C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\ImprovedShader.h",
+              "RelativeDocumentMoniker": "ImprovedShader.h",
+              "ToolTip": "C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\ImprovedShader.h",
+              "RelativeToolTip": "ImprovedShader.h",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAAYAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-22T08:13:10.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Camera.h",
+              "DocumentMoniker": "C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\Camera.h",
+              "RelativeDocumentMoniker": "Camera.h",
+              "ToolTip": "C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\Camera.h",
+              "RelativeToolTip": "Camera.h",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-22T08:12:49.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "ishader.h",
               "DocumentMoniker": "C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\ishader.h",
               "RelativeDocumentMoniker": "ishader.h",
               "ToolTip": "C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\ishader.h",
               "RelativeToolTip": "ishader.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-11-22T04:23:39.089Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "model.cpp",
               "DocumentMoniker": "C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\model.cpp",
               "RelativeDocumentMoniker": "model.cpp",
               "ToolTip": "C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\model.cpp",
               "RelativeToolTip": "model.cpp",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAwwFoAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAHwAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-20T02:18:30.883Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "model.h",
               "DocumentMoniker": "C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\model.h",
               "RelativeDocumentMoniker": "model.h",
               "ToolTip": "C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\model.h",
               "RelativeToolTip": "model.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-11-20T02:18:20.907Z",
               "EditorCaption": ""
@@ -83,20 +149,20 @@
               "RelativeDocumentMoniker": "to_center.cpp",
               "ToolTip": "C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\to_center.cpp",
               "RelativeToolTip": "to_center.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAkwEgAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-11T19:40:35.833Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "geometry.h",
               "DocumentMoniker": "C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\geometry.h",
               "RelativeDocumentMoniker": "geometry.h",
               "ToolTip": "C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\geometry.h",
               "RelativeToolTip": "geometry.h",
-              "ViewState": "AgIAAOsAAAAAAAAAAAAMwP0AAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAPoAAAAAAAAAAAAMwP0AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-11-11T19:36:00.076Z",
               "EditorCaption": ""
@@ -109,7 +175,7 @@
               "RelativeDocumentMoniker": "\u0421G3.cpp",
               "ToolTip": "C:\\Users\\ROG\\Documents\\GitHub\\CG3\\\u0421G3\\\u0421G3.cpp",
               "RelativeToolTip": "\u0421G3.cpp",
-              "ViewState": "AgIAALQAAAAAAAAAAAAAAMUAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAGYAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-11T19:34:33.985Z",
               "EditorCaption": ""
