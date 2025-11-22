@@ -38,5 +38,8 @@
     <ClInclude Include="tgaimage.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="ishader.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

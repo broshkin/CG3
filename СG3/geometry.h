@@ -22,6 +22,14 @@ struct Vec2 {
     Vec2<T> operator *(float f) const {
         return Vec2<T>(x * f, y * f);
     }
+
+    T& operator[](int i) {
+        return i == 0 ? x : y;
+    }
+
+    const T& operator[](int i) const {
+        return i == 0 ? x : y;
+    }
 };
 
 template <class T>
@@ -42,6 +50,14 @@ struct Vec3 {
         return Vec3<T>(x * f, y * f, z * f);
     }
 
+    T& operator[](int i) {
+        return i == 0 ? x : (i == 1 ? y : z);
+    }
+
+    const T& operator[](int i) const {
+        return i == 0 ? x : (i == 1 ? y : z);
+    }
+
     Vec3<T> cross(const Vec3<T>& v) const {
         return Vec3<T>(y * v.z - z * v.y,
             z * v.x - x * v.z,
@@ -53,7 +69,7 @@ struct Vec3 {
     }
 
     float length() const {
-        return sqrt(x * x + y * y + z * z);
+        return std::sqrt(x * x + y * y + z * z);
     }
 
     Vec3<T>& normalize() {
@@ -65,9 +81,24 @@ struct Vec3 {
         }
         return *this;
     }
+};
+
+template <class T>
+struct Vec4 {
+    T x, y, z, w;
+    Vec4() : x(0), y(0), z(0), w(1) {}
+    Vec4(T _x, T _y, T _z, T _w) : x(_x), y(_y), z(_z), w(_w) {}
 
     T& operator[](int i) {
-        return i == 0 ? x : (i == 1 ? y : z);
+        return i == 0 ? x : (i == 1 ? y : (i == 2 ? z : w));
+    }
+
+    const T& operator[](int i) const {
+        return i == 0 ? x : (i == 1 ? y : (i == 2 ? z : w));
+    }
+
+    Vec3<T> xyz() const {
+        return Vec3<T>(x, y, z);
     }
 };
 
@@ -75,9 +106,10 @@ typedef Vec2<float> Vec2f;
 typedef Vec2<int> Vec2i;
 typedef Vec3<float> Vec3f;
 typedef Vec3<int> Vec3i;
+typedef Vec4<float> Vec4f;
 
 class Matrix {
-    std::vector<std::vector<float> > m;
+    std::vector<std::vector<float>> m;
     int rows, cols;
 
 public:
@@ -141,17 +173,81 @@ public:
     }
 };
 
+// Вспомогательные функции для преобразований
+template <size_t LEN, size_t DIM>
+struct vec {
+    std::vector<float> data;
+    vec() { data.resize(LEN); }
+    float& operator[](const int i) { return data[i]; }
+    float operator[](const int i) const { return data[i]; }
+};
+
+template <size_t LEN, size_t DIM>
+vec<LEN, DIM> operator*(const vec<LEN, DIM>& lhs, const float rhs) {
+    vec<LEN, DIM> res;
+    for (size_t i = LEN; i--; res[i] = lhs[i] * rhs);
+    return res;
+}
+
+template <size_t LEN, size_t DIM>
+float operator*(const vec<LEN, DIM>& lhs, const vec<LEN, DIM>& rhs) {
+    float res = 0;
+    for (size_t i = LEN; i--; res += lhs[i] * rhs[i]);
+    return res;
+}
+
+template <size_t LEN, size_t DIM>
+vec<LEN, DIM> operator+(const vec<LEN, DIM>& lhs, const vec<LEN, DIM>& rhs) {
+    vec<LEN, DIM> res;
+    for (size_t i = LEN; i--; res[i] = lhs[i] + rhs[i]);
+    return res;
+}
+
+template <size_t LEN, size_t DIM>
+vec<LEN, DIM> operator-(const vec<LEN, DIM>& lhs, const vec<LEN, DIM>& rhs) {
+    vec<LEN, DIM> res;
+    for (size_t i = LEN; i--; res[i] = lhs[i] - rhs[i]);
+    return res;
+}
+
+template <size_t LEN, size_t DIM, size_t DIM2>
+vec<LEN, DIM> embed(const vec<DIM2, DIM>& v, float fill = 1) {
+    vec<LEN, DIM> res;
+    for (size_t i = LEN; i--; res[i] = (i < DIM2 ? v[i] : fill));
+    return res;
+}
+
+template <size_t LEN, size_t DIM, size_t DIM2>
+vec<LEN, DIM> proj(const vec<DIM2, DIM>& v) {
+    vec<LEN, DIM> res;
+    for (size_t i = LEN; i--; res[i] = (i < DIM2 ? v[i] : 1));
+    return res;
+}
+
 inline Matrix v2m(const Vec3f& v) {
     Matrix m(4, 1);
     m[0][0] = v.x;
     m[1][0] = v.y;
     m[2][0] = v.z;
-    m[3][0] = 1.f;
+    m[3][0] = 1.0f;
     return m;
 }
 
 inline Vec3f m2v(const Matrix& m) {
     return Vec3f(m[0][0] / m[3][0], m[1][0] / m[3][0], m[2][0] / m[3][0]);
+}
+
+inline Vec4f m2v4(const Matrix& m) {
+    return Vec4f(m[0][0], m[1][0], m[2][0], m[3][0]);
+}
+
+inline Matrix v42m(const Vec4f& v) {
+    Matrix m(4, 1);
+    m[0][0] = v.x;
+    m[1][0] = v.y;
+    m[2][0] = v.z;
+    m[3][0] = v.w;
+    return m;
 }
 
 #endif
